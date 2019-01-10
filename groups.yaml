@@ -1,0 +1,24 @@
+
+##VIEWS##
+default_view:
+  view: true
+  name: Home
+  icon: mdi:home
+  entities:    
+    - weather.dark_sky
+    - sun.sun
+    - camera.front_door
+    - alarm_control_panel.home_alarm
+    - group.family_room
+    - cover.garage_door_2
+    - cover.garage_door_3
+
+#### GROUPS ####
+
+## FAMILY ROOM ##
+family_room:
+    name: Family Room
+    view: false
+    entities:
+      - switch.tv
+      - media_player.family_room_speaker
