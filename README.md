@@ -9,16 +9,16 @@ Visit my website for furtherinstall instructions: https://mikereams.wordpress.co
 
 
 # Hardware Running HA
-* __[Raspberry Pi 3] (https://amzn.to/2RFCHyd)__
+* __[Raspberry Pi 3](https://amzn.to/2RFCHyd)__
 * __[Samsung Evo+ 64GB SD](https://amzn.to/2RLzCwY)__
 * __[Aeotec ZStick](https://amzn.to/2FkYXXE)__
 
 
 # Connected Devices
-* __[Sonoff SV] (https://amzn.to/2FoU4wI)__
-* __[NODEMCU 8266] (https://amzn.to/2RI17XY)__
-* __[Wired Door Sensor Magnetic Switch] (https://amzn.to/2RJ9l24)__
-* __[Door Windows Detector] (https://amzn.to/2Cf9AZb)
+* __[Sonoff SV](https://amzn.to/2FoU4wI)__
+* __[NODEMCU 8266](https://amzn.to/2RI17XY)__
+* __[Wired Door Sensor Magnetic Switch](https://amzn.to/2RJ9l24)__
+* __[Door Windows Detector](https://amzn.to/2Cf9AZb)
 
 ## CAMERAS
 * __[Arlo Pro Cameras](https://amzn.to/2VIgA9C)__ 
