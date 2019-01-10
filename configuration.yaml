@@ -2,29 +2,52 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 0
-  longitude: 0
+  latitude: !secret latitude_loc_home
+  longitude: !secret longitude_loc_home
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
+  elevation: !secret home_elevation
   # metric for Metric, imperial for Imperial
-  unit_system: metric
+  unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: UTC
+  time_zone: America/New_York
+  temperature_unit: F
   # Customization file
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
-
+  javascript_version: latest
+  themes: !include_dir_merge_named themes/
+  
 # Enables configuration UI
 config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+http:
+  base_url: !secret http_base_url
+  api_password: !secret http_password
+  #server_port: !secret http_port
+  #ssl_certificate: /ssl/fullchain.pem
+  #ssl_key: /ssl/privkey.pem
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
+  cors_allowed_origins:
+    - https://google.com
+    - https://google.com
+    - https://www.home-assistant.io
+  #use_x_forwarded_for: true
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - 8.8.8.8
+    - 192.168.0.0/24
+    - 10.213.0.0/24
+    - 10.10.0.0/24
+    - 172.1.0.0/24
+    - fd00::/8 
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -33,38 +56,350 @@ config:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
+    include_used_components: true
+    reporting: true
 
 # Discover some devices automatically
-discovery:
+discovery: !include misc/discovery.yaml
 
+#ios: !include ios_cfg.yaml
+ios:
+
+browser:
+    
+homekit:
+#  auto_start: true
+#  filter:
+#    exclude_domains:
+#      - device_tracker
+#      - zwave
+#      - counter
+#      - input_boolean
+#      - script
+#  entity_config:
+#    alarm_control_panel.home_alarm:
+#      code: 0000
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
+  intents:
+    activateSceneIntent:
+     - Turn on [scene] {scene}
+    turnOnLight:
+     - Turn on [light] {light}
+    turnOffLight:
+     - Turn off [light] {light}
+    searchWeatherForecast:
+     - What is the weather like today
+     - What is the temperature like today
+    closeGarageDoorOne:
+     - Close [Garage Door One] {Garage Door One}
+     - Close [Garage Door Two] {Garage Door Two}
+     - Close [Garage Door Three] {Garage Door Three}
+    openGarageDoorOne:
+     - Open [Garage Door One] {Garage Door One}
+     - Open [Garage Door Two ] {Garage Door Two}
+     - Open [Garage Door Three] {Garage Door Three}
 
 # Enables support for tracking state changes over time
 history:
+  exclude:
+    domains:
+      - weblink
+      - updater
+      - group
+      - weather
+      - sun
+      - media_player
+      - device_tracker
+    entities:
+      - sensor.date
+      - sensor.date__time
+      - sensor.season
 
+history_graph: !include misc/history_graph.yaml
+      
 # View all events in a logbook
-logbook:
+logbook: !include misc/logbook.yaml
 
+recorder:
+  purge_keep_days: 14
+  exclude:
+    domains:
+      - weblink
+      - updater
+      - device_tracker
+      - group
+      - history_graph
+      - input_boolean
+      - input_select
+      - scene
+      - sun
+      - zone
+      - zwave
+    entities:
+      - sun.sun # Don't record sun data
+      - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+      - sensor.date
+      
 # Enables a map showing the location of tracked devices
 map:
 
+media_player: !include_dir_list media_player/
+
+python_script:
+
+downloader:
+  download_dir: downloads
+  
+panel_iframe:
+  configurator:
+    title: Editor
+    icon: mdi:wrench
+    url: !secret panel_iframe_config
+  nodered:
+    title: Node-RED Flows
+    icon: mdi:sitemap
+    url: !secret nodered_admin
+    
+#panel_custom:
+#  - name: dominos
+#    sidebar_title: Dominos
+#    sidebar_icon: mdi:pizza
+#    url_path: dominos      
 # Track the sun
 sun:
 
-# Sensors
-sensor:
-  # Weather prediction
-  - platform: yr
+# AI Voice Assistant
+#snips:
+
+# Ring Pro Camera
+ring:
+  username: !secret ring_email
+  password: !secret ring_passwd
+
+#Sleep Number Service Integration
+sleepiq:
+  username: !secret sleepiq_email
+  password: !secret sleepiq_passwd
+  
+#weather:
+#  - platform: openweathermap
+#    mode: hourly
+#    api_key: !secret weathermap_key
+#    latitude: !secret latitude_loc_home
+#    longitude: !secret longitude_loc_home
+
+proximity: !include misc/proximity.yaml
+  
+counter:
+  warning_counter:
+    name: Warnings
+    icon: mdi:alert
+
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    code: !secret alarm_code
+    trigger_time: 300
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      delay_time: 0
+      pending_time: 0
+    armed_away:
+      delay_time: 60
+      pending_time: 30
+    triggered:
+      pending_time: 0
+
+device_tracker:
+  - platform: ping
+    track_new_devices: True
+    consider_home: 0
+    hosts:
+      dads_samsung_cell_ip: 0.0.0.0
+
+logger:
+  #logs:
+   # homeassistant.components.ecovacs: debug
+   # homeassistant.components.vacuum.ecovacs: debug
+   # sucks: debug
+    
+#  - platform: gpslogger
+#    password: !secret gpslogger_password
+#  - platform: snmp
+#    name: SNMP Tracker
+#    host: 192.168.1.200
+#    community: public
+#    accept_errors: true
+#    baseoid: 1.3.6.1.4.1.2021.10.1.3.1
+#  - platform: icloud
+#    username: USERNAME
+#    password: PASSWORD
+#    account_name: accountname
 
 # Text to speech
 tts:
   - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+    base_url: http://0.0.0.0:8123
+  
+google_assistant:
+  project_id: homeautomation-1543146048290
+  exposed_domains:
+    - switch
+    - cover
+    - light
+    - group
+    - scene
+    - sensor
+    - media_player
+    - automation
+    - group
+    - camera
+    - binary_sensor
+
+wemo:
+  discovery: true
+  static:
+    - 0.0.0.0
+#zwave:
+#  polling_interval: 10000
+  #usb_path: /dev/ttyACM0
+  #config_path: /srv/homeassistant/src/python-openzwave/openzwave/config
+  #device_config: !include zwave_devices.yaml
 
 # Cloud
-cloud:
+cloud: !include cloud.yaml
 
-group: !include groups.yaml
+ffmpeg:
+#  ffmpeg_bin: /usr/bin/ffmpeg
+
+#mqtt:
+  #broker: !secret mqtt_broker_ip
+  #port: !secret mqtt_port
+  #username: !secret mqtt_username
+  #password: !secret mqtt_password
+  #client_id: home-assistant-main
+  #keepalive: 60
+  #certificate: /home/paulus/downloads/mosquitto.org.crt
+
+notify:
+  - name: Notify_Dads_iPhone
+    platform: group
+    services:
+      - service: html5
+        data:
+          target: "iphone"
+      - service: html5_nexus
+  - platform: discord
+    token: !secret discord_bot_key
+  - name: Notify_Dad_PushBullet
+    platform: pushbullet
+    api_key: !secret pushbullet_access_token
+  - name: Notify_Mom_PushBullet
+    platform: pushbullet
+    api_key: !secret pushbullet_access_token
+  - name: xbox
+    platform: rest
+    resource: https://xboxapi.com/v2/messages
+    method: POST_JSON
+    headers:
+      Content-Type: application/json
+      X-Auth: !secret xbox_api_key
+    data:
+      to:
+        - !secret xbox_xuid
+    
+###########INCLUDES#####
+#alert: !include_dir_merge_named alerts/
 automation: !include automations.yaml
+input_boolean: !include misc/input_boolean.yaml
+input_select: !include misc/input_select.yaml
+binary_sensor: !include_dir_list binary_sensors/
+sensor: !include_dir_list sensors/
+light: !include_dir_list lights/
+#shell_command: !include misc/shell_commands.yaml
+switch: !include_dir_list switches/
+group: !include groups.yaml
+weather: !include_dir_list weather/
+#weblink: !include misc/weblinks.yaml
+zone: !include_dir_list zones/
+camera: !include_dir_list cameras/
 script: !include scripts.yaml
+intent_script: !include intent_script.yaml
+
+#cover: !include_dir_list covers/cover.yaml
+cover:
+  - platform: mqtt
+    name: "Garage Door 2"
+    state_topic: "cmnd/garage2state/POWER2"
+    command_topic: "cmnd/garage_2/POWER"
+    #availability_topic: "tele/garage_2/LWT"
+    payload_open: "ON"
+    payload_close: "ON"
+    payload_stop: "ON"
+    state_open: "ON"
+    state_closed: "OFF"
+    optimistic: false
+    retain: false
+  - platform: mqtt
+    name: "Garage Door 3"
+    state_topic: "cmnd/garage3state/POWER2"
+    command_topic: "cmnd/garage_3/POWER"
+    #availability_topic: "tele/garage_2/LWT"
+    payload_open: "ON"
+    payload_close: "ON"
+    payload_stop: "ON"
+    state_open: "ON"
+    state_closed: "OFF"
+    optimistic: false
+    retain: false
+
+geo_location:
+  - platform: geo_json_events
+    url: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
+    radius: 150
+    entity_namespace: 'usgs_earthquakes'
+#  - platform: nsw_rural_fire_service_feed
+#    radius: 50
+#    categories:
+#      - 'Emergency Warning'
+#      - 'Watch and Act'
+#      - 'Advice'
+    
+ifttt:
+  key: ifttt_key
+
+alexa:
+
+scene:
+  - name: Start Morning
+    entities:
+      light.sonoff_fireplace_lights: true
+      light.sonoff_christmas_lights: true
+      
+wunderlist:
+  client_id: !secret wunderlist_clientid
+  access_token: !secret wunderlist_access_token
+  
+wake_on_lan:
+  
+api:
+  
+ecovacs:
+  username: !secret ecovacs_id
+  password: !secret ecovacs_passwd
+  country: us
+  continent: na
+
+  
+#microsoft_face:
+#  api_key: YOUR_API_KEY
+#  azure_region: eastus2
+
+#mychevy:
+#  username: chevy_email
+#  password: chevy_passwd
