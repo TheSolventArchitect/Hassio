@@ -18,8 +18,8 @@ Visit my website for furtherinstall instructions: https://mikereams.wordpress.co
 * __[Sonoff SV](https://amzn.to/2FoU4wI)__
 * __[NODEMCU 8266](https://amzn.to/2RI17XY)__
 * __[Wired Door Sensor Magnetic Switch](https://amzn.to/2RJ9l24)__
-* __[Door Windows Detector](https://amzn.to/2Cf9AZb)
-* __[ECOVACS DEEBOT 601 Robot Vacuum Cleaner](https://amzn.to/2RHdovP)
+* __[Door Windows Detector](https://amzn.to/2Cf9AZb)__
+* __[ECOVACS DEEBOT 601 Robot Vacuum Cleaner](https://amzn.to/2RHdovP)__
 
 
 ## CAMERAS
