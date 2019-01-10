@@ -86,6 +86,4 @@ pyozw.sqlite
 ip_bans.yaml
 !/.gitignore
 ozw_config
-.uuid
-.HA_VERSION
 config
