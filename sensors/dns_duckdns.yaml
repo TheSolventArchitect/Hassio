@@ -1,4 +1,4 @@
 platform: dnsip
-hostname: reams.duckdns.org
-name: Reams-DuckDNS External
+hostname: domain.duckdns.org
+name: DuckDNS External
 #resolver: 8.8.8.8
