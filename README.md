@@ -5,6 +5,8 @@ I'm currently running [Home Assistant](https://home-assistant.io) version __1.13
 
 After downloading the disk image and writing it to an SD card with [Etcher](https://etcher.io/), I run mymmands in [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) to manage my instance.
 
+Visit my website for furtherinstall instructions: https://mikereams.wordpress.com/2018/11/30/installing-home-assistant/
+
 
 # Hardware Running HA
 * __[Raspberry Pi 3](https://amzn.to/2RFCHyd)__
