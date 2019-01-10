@@ -88,4 +88,4 @@ ip_bans.yaml
 ozw_config
 .uuid
 .HA_VERSION
-.storage
+config
