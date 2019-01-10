@@ -1,0 +1,8 @@
+lights_all_on:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        brightness: 255
+        color_temp: 260
+        transition: 15

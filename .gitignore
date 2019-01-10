@@ -84,7 +84,5 @@ secrets.yaml
 known_devices.yaml
 pyozw.sqlite
 ip_bans.yaml
-.*
 !/.gitignore
-config
 ozw_config

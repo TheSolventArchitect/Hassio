@@ -1,0 +1,32 @@
+bedtime:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: group.all_lights
+        transition: 15
+    - service: switch.turn_off
+      data:
+        entity_id: switch.homeseer_hsws100_wall_switch_switch_7_0
+    - service: fan.turn_on
+      data:
+        entity_id:
+         - fan.ge_12730_fan_control_switch_level_54_0
+        speed: "medium"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.ben_status
+        option: "Sleeping"
+    - service: automation.trigger
+      data:
+        entity_id:
+         - automation.tv_power
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.cailin_status
+        option: "Sleeping"
+    - service: tts.google_say
+      entity_id:
+        - media_player.kitchen_home
+        - media_player.bedroom_home
+      data:
+        message: "Powering down. Beep boop! Good night. Sleep tight."

@@ -1,0 +1,19 @@
+motion_sleeping_night_timer:
+  sequence:
+  - delay:
+      minutes: 2
+  - service: light.lifx_set_state
+    data:
+      entity_id:
+        - light.switch
+        - light.wall
+        - light.megadesk
+        - light.sink
+        - light.nightlight
+      transition: 2
+      power: off
+  - service: light.turn_off
+    data:
+      entity_id:
+        - light.nightlight
+      transition: 2

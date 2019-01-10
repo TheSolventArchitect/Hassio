@@ -1,0 +1,8 @@
+dash_bounty_on:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.lab_lights
+        brightness: 255
+        color_temp: 260
+        transition: 2
