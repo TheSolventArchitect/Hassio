@@ -1,0 +1,5 @@
+platform: ups
+name: UPS Delivery
+update_inverval: '00:15:00'
+username: !secret ups_email
+password: !secret ups_passwd

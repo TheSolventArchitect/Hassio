@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Joshuas Switch"
+entity_id: switch.fireplace_switch
+#command_topic: "cmnd/sonoff_joshua/power"
+command_topic: "cmnd/sonoff_joshua/POWER"
+state_topic: "stat/sonoff_joshua/POWER"
+#qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+availability_topic: "tele/sonoff_joshua/LWT"
+retain: false

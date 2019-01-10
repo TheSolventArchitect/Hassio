@@ -1,0 +1,3 @@
+platform: ffmpeg
+input: camera.front_door
+name: Ring

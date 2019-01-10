@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  hd_space_sensor_alert:
+    value_template: '{{ states.sensor.disk_use_percent_home.state | float > 80 }}'
+    friendly_name: 'Hassio Disk Usage Above 80 Percent'
+    #icon_template: '{%if states.sensor.disk_use_percent_home.state == '255' %}mdi:glassdoor{% elif states.sensor.disk_use_percent_home.state == '0' %}mdi:glassdoor{% elif states.sensor.disk_use_percent_home.state == '254' %}mdi:glassdoor{% endif %}'

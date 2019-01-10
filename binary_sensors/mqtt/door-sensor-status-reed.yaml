@@ -1,0 +1,13 @@
+platform: mqtt
+name: "Door Sensor NodeMCU Status"
+state_topic: "home/doors/stat"
+payload_on: "Connected"
+payload_off: "Disconnected"
+payload_available: "Connected"
+payload_not_available: "Disconnected"
+qos: 1
+#state_on: "on"
+#state_off: "off"
+device_class: opening
+value_template: '{{ value }}'
+retain: false

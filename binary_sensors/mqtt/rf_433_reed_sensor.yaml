@@ -1,0 +1,10 @@
+platform: mqtt
+name: RF Sensor 1
+state_topic: "RF_Bridge/tele/RESULT"
+payload_on: "5C69E7"
+payload_off: "5C69EE"
+device_class: Motion
+optimistic: false
+qos: 1
+retain: false
+value_template: '{{ value_json.data }}'

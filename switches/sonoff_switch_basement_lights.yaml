@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Basement Light Switch"
+#192.168.1.210
+command_topic: "basement_lights/cmnd/POWER"
+state_topic: "basement_lights/stat/POWER"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+availability_topic: "basement_lights/tele/LWT"
+#device_class:
+retain: false

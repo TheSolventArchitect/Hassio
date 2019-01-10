@@ -1,0 +1,22 @@
+include:
+  domains:
+    - binary_sensor
+    - alarm_control_panel
+    - automation
+    - camera
+    - device_tracker
+    - input_select
+    - light
+    - switch
+    - input_boolean
+    - zone
+    - zwave
+exclude:
+  entities:
+    - sensor.date
+    - sensor.date__time
+    - automation.lets_encrypt_renewal
+    - automation.set_theme_at_startup
+    - automation.sunset_scene
+    - zwave.aeotec_zw090_zstick_gen5_us
+    - zwave.unknown_node_3

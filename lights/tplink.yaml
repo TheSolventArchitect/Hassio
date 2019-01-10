@@ -1,0 +1,10 @@
+platform: tplink
+name: Security Light
+entity_id: light.security_light
+host: 192.168.1.110
+friendly_name: Security Light Bulb
+#brightness: 25.5
+#current_power_w: 1.8
+#daily_energy_kwh: 0.008
+#monthly_energy_kwh: 0.114
+#supported_features: 1

@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Basement Lights"
+command_topic: "basementlights/cmnd/POWER"
+state_topic: "basementlights/stat/RESULT"
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+availability_topic: "basementlights/tele/LWT"
+optimistic: false
+qos: 1
+retain: false
+#device_class:

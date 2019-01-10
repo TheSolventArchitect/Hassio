@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Fireplace Switch"
+entity_id: switch.fireplace_switch
+#command_topic: "cmnd/sonoff/power"
+command_topic: "cmnd/fireplace/POWER"
+state_topic: "stat/fireplace/POWER"
+#qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+availability_topic: "tele/fireplace/LWT"
+retain: false

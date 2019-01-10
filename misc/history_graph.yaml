@@ -1,0 +1,25 @@
+grp_smart_devices:
+  name: Smart Device Graph
+  entities:
+    - switch.living_room_tv
+    - light.security_light
+grp_cameras:
+  name: Front Door Camera Graph
+  entities:
+    - camera.front_door
+    - camera.ring
+grp_sleep_mom:
+  name: Moms Sleep Pattern
+  entities:
+    - binary_sensor.sleepnumber_sheryl_sheryl__is_in_bed
+grp_sleep_dad:
+  name: Dads Sleep Pattern
+  entities:
+    - binary_sensor.sleepnumber_sheryl_mike_is_in_bed
+grp_family_devices:
+  name: Family Devices Graph
+  entities:
+    - device_tracker.mikes_iphone
+    - device_tracker.mikesipad2
+    - device_tracker.sherrysipad
+    - device_tracker.sherylsiphone

@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Fireplace"
+command_topic: "fireplace/cmnd/POWER"
+state_topic: "fireplace/stat/RESULT"
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+availability_topic: "fireplace/tele/LWT"
+optimistic: false
+qos: 1
+retain: false
+#device_class:

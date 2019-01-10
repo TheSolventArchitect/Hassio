@@ -1,0 +1,9 @@
+#enable:
+#  - homekit
+#  - dlna_dmr
+ignore:
+  - directv
+  - harmony
+  - ikea_tradfri
+  - roku
+  - samsung_printer

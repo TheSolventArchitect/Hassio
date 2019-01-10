@@ -1,0 +1,88 @@
+####
+dads_status:
+  name: Dads Status
+  icon: mdi:account-circle-outline
+  options:
+   - "Home"
+   - "Work"
+   - "Away"
+   - "Heading Home"
+   - "Sleeping"
+  initial: Home
+moms_status:
+  name: Moms Status
+  icon: mdi:human-female-boy
+  options:
+   - "Home"
+   - "Work"
+   - "Away"
+   - "Heading Home"
+   - "Sleeping"
+  initial: Home
+child_oldest_status:
+  name: Joshua's Status
+  icon: mdi:human-child
+  options:
+   - "Home"
+   - "Work"
+   - "Away"
+   - "Heading Home"
+   - "School"
+   - "Sleeping"
+  initial: Home
+child_2_status:
+  name: Nathan's Status
+  icon: mdi:baby-buggy
+  options:
+   - "Home"
+   - "Work"
+   - "Away"
+   - "Heading Home"
+   - "School"
+   - "Sleeping"
+  initial: Home
+####ALARM####
+alarm_status:
+  name: Alarm Status
+  options:
+   - "Home"
+   - "Armed"
+   - "Away"
+   - "Off"
+  initial: Home
+  icon: mdi:alarm-light
+####Home Presence####
+home_room_preset:
+    options:
+      - Family
+      - Mom with kids
+      - Dad with kids
+      - Visitors
+      - Visitors with kids
+      - Empty
+####HASS####
+hass_theme:
+  name: HASS Themes
+  options:
+   - default
+   - dark-blue
+   - dark-gray
+   - dark-blue-purple
+   - dark-purple
+   - dark-red
+   - dark-yellow
+   - gray-green
+   - light-blue
+   - light-cyan
+   - light-green
+   - light-light-red
+   - light-navy-blue
+   - light-orange
+   - light-purple
+   - light-yellow
+   - midnight
+   - navy-blue-yellow
+   - teal
+   - dark-orange
+  initial: teal
+  icon: mdi:theme-light-dark

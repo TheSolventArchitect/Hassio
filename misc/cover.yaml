@@ -1,0 +1,16 @@
+platform: mqtt
+name: "Sonoff Garage 1"
+state_topic: "cmnd/garagestate/POWER2"
+command_topic: "cmnd/garage_1/POWER"
+#availability_topic: "tele/garage_1/LWT"
+payload_open: "ON"
+payload_close: "ON"
+payload_stop: "ON"
+state_open: "ON"
+state_closed: "OFF"
+optimistic: false
+retain: false
+#### COMMANDS FOR SONOFF
+# backlog SwitchMode1 1;SwitchMode2 2;SwitchMode3 1
+# rule1 on Power1#state=1 do backlog power1 1; ruletimer1 1 endon on rules#timer=1 do power1 off endon
+# rule1 1

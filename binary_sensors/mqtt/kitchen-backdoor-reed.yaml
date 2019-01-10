@@ -1,0 +1,13 @@
+platform: mqtt
+name: "Kitchen Back Door"
+state_topic: "doors/tele/SENSOR"
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "open"
+payload_not_available: "closed"
+qos: 1
+state_on: "on"
+state_off: "off"
+device_class: door
+value_template: '{{ value_json.Switch3 }}'
+retain: false

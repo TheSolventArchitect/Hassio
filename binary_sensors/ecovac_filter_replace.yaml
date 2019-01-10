@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  vacuum_filter_replace:
+    friendly_name: "Vacuum Filter Replacement Alert"
+    device_class: problem
+    value_template: "{{ state_attr('vacuum.ecovacs', 'component_filter') <= 5 }}"

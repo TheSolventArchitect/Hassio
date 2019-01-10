@@ -1,0 +1,23 @@
+home: 
+  devices:
+    - device_tracker.mikes_iphone
+    - device_tracker.sheryls_iphone
+    - device_tracker.samsungsmcellwork
+    - device_tracker.mreams_samsungsmcellwork
+  tolerance: 0
+  unit_of_measurement: mi
+dads_work: 
+  devices:
+    - device_tracker.samsungsmcellwork
+    - device_tracker.mreams_samsungsmcellwork
+  tolerance: 20
+  unit_of_measurement: mi
+joshuas_school: 
+  devices:
+    - device_tracker.mikes_iphone
+    - device_tracker.sheryls_iphone
+    - device_tracker.samsungsmcellwork
+    - device_tracker.mreams_samsungsmcellwork
+    - device_tracker.mikesiphone
+  tolerance: 5
+  unit_of_measurement: mi

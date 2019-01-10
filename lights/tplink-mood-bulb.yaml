@@ -1,0 +1,17 @@
+# TP-LINK Multi Color Bulb
+platform: tplink
+entity_id: light.mood_light
+name: Mood Light
+friendly_name: Mood Light
+homebridge_name: Mood Light
+host: 192.168.1.111
+#min_mireds: 111
+#max_mireds: 400
+#brightness: 255
+#hs_color: 39,100
+#rgb_color: 255,165,0
+#xy_color: 0.562,0.417
+#current_power_w: 10.8
+#daily_energy_kwh: 0.034
+#monthly_energy_kwh: 0.034
+#supported_features: 19

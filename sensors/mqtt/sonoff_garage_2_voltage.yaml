@@ -1,0 +1,5 @@
+platform: mqtt
+name: Garage Door 2 Voltage
+state_topic: "tele/garage_2/STATE"
+value_template: "{{ value_json.Vcc }}"
+unit_of_measurement: 'volts'

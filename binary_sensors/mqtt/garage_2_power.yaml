@@ -1,0 +1,12 @@
+platform: mqtt
+name: Garage Door 2 Power Relay MQTT Status
+state_topic: "garage_2/stat/POWER"
+availability_topic: "garage_2/tele/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+retain: false

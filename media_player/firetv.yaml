@@ -1,0 +1,5 @@
+platform: firetv
+name: Fire TV
+#host: 
+get_source: true
+get_sources: true

@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Front Door Lights"
+command_topic: "sonoff_pow_01/cmnd/POWER"
+state_topic: "sonoff_pow_01/stat/RESULT"
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+state_on: "ON"
+state_off: "OFF"
+availability_topic: "sonoff_pow_01/tele/LWT"
+optimistic: false
+qos: 1
+retain: false
+#device_class:

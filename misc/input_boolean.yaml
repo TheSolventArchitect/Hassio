@@ -1,0 +1,35 @@
+tv:
+  name: TV
+  initial: off
+  icon: mdi:TV
+light:
+  name: Light
+  initial: off
+  icon: mdi:lightbulb
+motion_lockout:
+  name: Motion Automations
+  initial: off
+  icon: mdi:run
+sleep_lockout:
+  name: Sleep Automations
+  initial: off
+  icon: mdi:hotel
+presence_lockout:
+  name: Presence Automations
+  initial: off
+  icon: mdi:home
+ha_uptime:
+  name: Home Assistant Uptime
+  initial: on
+presence_armed:
+  name: Presence Armed
+  initial: off
+  icon: mdi:account-multiple
+alarm_siren:
+  name: Sound The Alarm
+  initial: off
+  icon: mdi:alarm-bell
+alarmweekday:
+  name: Weekdays Only
+  initial: off
+  icon: mdi:calendar

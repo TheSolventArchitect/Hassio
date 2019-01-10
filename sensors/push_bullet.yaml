@@ -1,0 +1,7 @@
+platform: pushbullet
+api_key: !secret pushbullet_access_token
+monitored_conditions:
+  - body
+  - receiver_email
+  - type
+  - source_device_iden

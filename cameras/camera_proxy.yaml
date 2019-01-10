@@ -1,0 +1,4 @@
+platform: proxy
+entity_id: camera.front_door
+max_stream_width: 360
+max_image_width: 720

@@ -1,0 +1,137 @@
+      
+##AUTOMATION##
+    automation.dad_went_to_bed:
+      friendly_name: "Daddy Sleeping"
+      icon: mdi:sleep
+      hidden: no
+    automation.dad_woke_up:
+      friendly_name: "Daddy is now Awake"
+      icon: mdi:sleep
+      hidden: no
+    automation.iftt_webhook_receiver:
+      friendly_name: "IFTT WebHook Receiver"
+      icon: mdi:webhook
+      hidden: no
+    automation.set_theme_for_day_and_night:
+      friendly_name: "Daytime Scene"
+      icon: mdi:weather-sunny
+      hidden: no
+    automation.sunset_scene:
+      friendly_name: "Sunset Scene"
+      icon: mdi:weather-sunny
+      hidden: no
+    automation.turn_on_light_when_motion_is_detected:
+      friendly_name: "Motion Detected"
+      icon: mdi:shield-account
+      hidden: no
+
+##LIGHTS##
+    light.security_light:
+      friendly_name: "Security Light"
+      icon: mdi:led-outline
+      hidden: no
+
+##CAMERAS##
+    camera.ring:
+      friendly_name: "Ring Camera"
+      icon: mdi:led-outline
+      hidden: no
+    camera.front_door:
+      friendly_name: "Front Door Camera - Ring"
+      icon: mdi:led-outline
+      hidden: no
+      
+##Sensors##
+    sensor.sleepnumber_sheryl_mike_sleepnumber:
+      friendly_name: "Mommy's Sleep Number"
+      icon: mdi:sleep
+      hidden: no
+    sensor.sleepnumber_sheryl_sheryl__sleepnumber:
+      friendly_name: "Mommy's Sleep Number"
+      icon: mdi:sleep
+      hidden: no
+    sensor.ups:
+      friendly_name: "UPS Delivery"
+      icon: mdi:mailbox
+      hidden: no
+    sensor.mikes_iphone_7_plus_battery_level:
+      friendly_name: "Mikes iPhone Battery Level"
+      icon: mdi:cellphone
+      hidden: no
+    sensor.mikes_iphone_7_plus_battery_state:
+      friendly_name: "Mikes iPhone Battery State"
+      icon: mdi:cellphone
+      hidden: no
+
+##Binary Sensors##
+    binary_sensor.sleepnumber_sheryl_mike_is_in_bed:
+      friendly_name: "Daddy In Bed"
+      icon: mdi:sleep
+      hidden: no
+    binary_sensor.sleepnumber_sheryl_sheryl__is_in_bed:
+      friendly_name: "Mommy In Bed"
+      icon: mdi:sleep
+      hidden: no
+      
+#######Device_TRACKER#
+    device_tracker.50064dba003a689:
+      friendly_name: "192.168.1.155"
+      icon: mdi:access-point
+      hidden: yes  
+    device_tracker.amazon2dc5297fc:
+      friendly_name: "Alexa"
+      icon: mdi:amazon-alexa
+      hidden: no
+    device_tracker.wn2000rptv2:
+      friendly_name: "WiFi Extender"
+      icon: mdi:aaccess-point
+      hidden: no  
+    device_tracker.mikesiphone:
+      friendly_name: "Mikes Phone"
+      icon: mdi:cellphone
+      hidden: no
+    device_tracker.lb110:
+      friendly_name: "Security Light - Device Tracker"
+      icon: mdi:led-outline
+      hidden: no
+
+#######ALARM-PANEL#
+    alarm_control_panel.mqtt_alarm:
+      friendly_name: "Alarm Panel"
+      icon: mdi:alarm-light
+      hidden: no
+
+##Groups##
+    group.environment_view:
+      friendly_name: "Environment View"
+      icon: mdi:sleep
+      hidden: no
+    group.all_automations:
+      friendly_name: "All Automations"
+      icon: mdi:auto-fix
+      hidden: yes
+    group.all_switches:
+      hidden: no
+    group.input_boolean:
+      hidden: no
+    group.all_covers:
+      hidden: no
+    group.all_lights:
+      hidden: no
+    group.all_scripts:
+      hidden: no
+    group.all_devices:
+      hidden: no  
+#############AEOTEC####
+##############ZWAVE Hubs####
+    zwave.aeotec_zw090_zstick_gen5_us:
+      friendly_name: "Z-Stick Hub"
+      icon: mdi:security
+      hidden: yes
+      
+##############HA####
+    input_boolean.ha_uptime:
+      hidden: no
+
+
+      

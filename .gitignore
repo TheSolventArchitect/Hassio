@@ -87,3 +87,4 @@ ip_bans.yaml
 !/.gitignore
 ozw_config
 config
+.storage
